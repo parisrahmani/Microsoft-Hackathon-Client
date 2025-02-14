@@ -96,7 +96,7 @@ function GamePage() {
         </div>
       </div>
       <div className="game-page__robot">
-        <Robot emote="basic" />
+        <Robot emote="basic2" />
       </div>
     </section>
   );

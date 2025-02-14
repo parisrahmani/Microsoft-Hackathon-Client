@@ -11,7 +11,8 @@ const emoteMap = {
   basic: { imageSrc: basic, meterSrc: meter1 },
   hi: { imageSrc: hi, meterSrc: meter1 },
   wrong: { imageSrc: wrong, meterSrc: meter1 },
-  correct: { imageSrc: correct, meterSrc: meter1 }, // Adjust as needed
+  correct: { imageSrc: correct, meterSrc: meter1 },
+  basic2: { imageSrc: basic, meterSrc: meter2 },
 };
 
 function Robot({ emote }) {
