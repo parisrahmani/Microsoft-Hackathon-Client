@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Robot from "../../components/Robot/Robot";
+import { Link } from "react-router-dom";
 
 function GamePage() {
   const [questions, setQuestions] = useState([]);
@@ -83,7 +84,7 @@ function GamePage() {
               Practice 2: Prompt Engineering 101
             </button>
           </Link>
-          <div class="game-end__text">
+          <div className="game-end__text">
             <p>
               Learn about AI ethics and prompt engineering to use AI to your
               advantage.
