@@ -6,26 +6,28 @@ import Robot from '../../components/Robot/Robot';
 import { useState, useEffect } from "react";
 
 function CoPilotPage() {
-  const [copilotChat, setCopilotChat] = useState(null);
+  const [allChats, setAllChats] = useState(null);
   const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const getChat = async () => {
       try {
         const { data } = await axios.get(`${API_URL}/chat-bot`);
         console.log(data);
-        setCopilotChat(data);
+        setAllChats(data);
       } catch (err) {
         console.error(err);
       }
     };
     getChat();
   }, []);
-  if (!copilotChat) {
-    return <>Return Loading...</>;
+  if (!allChats) {
+    return <>Loading...</>;
   }
+
   return (
     <div>
-      <Copilot/>
+      <Copilot allChats={ allChats }/>
       <Robot/>
     </div>
   )
