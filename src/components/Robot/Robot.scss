@@ -1,12 +1,15 @@
+@use "../../styles/partials/variables" as *;
+
 .robot {
   display: flex;
   flex-direction: column;
   width: 401px;
   height: 484px;
-  background-color: #fefefe;
-  border: 2rem solid #f6f6f6;
+  //   background-color: #fefefe;
+  background-color: $white;
   border-radius: 2rem;
   overflow: hidden;
+  box-shadow: 0px 0px 40px 10px #0000000d inset;
 
   &__image {
     width: 100%;
