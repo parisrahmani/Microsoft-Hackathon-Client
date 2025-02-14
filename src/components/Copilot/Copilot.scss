@@ -1,0 +1,79 @@
+.copilot {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 102px;
+  padding-top: 105px;
+  padding-bottom: 105px;
+  height: 626px;
+  justify-content: space-between;
+  &__title {
+    font-size: 24px;
+    color: #222c4c;
+  }
+  &__conversation {
+    width: 278px;
+  }
+  &__pilot {
+    font-size: 16px;
+    line-height: 21.15px;
+    font-weight: 400;
+    color: #f1ddcc;
+    padding: 1.2rem 1.5rem;
+    border-radius: 24px;
+    background-color: #222c4c;
+  }
+  &__input {
+    border-radius: 24px;
+    height: 46px;
+    width: 452px;
+    border: none;
+
+    box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, 0.05);
+    &::placeholder {
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 21.15px;
+      padding: 12px 24px;
+    }
+  }
+  &__form {
+    display: flex;
+    padding-top: 36px;
+    gap: 3rem;
+  }
+  &__button {
+    width: 89px;
+    height: 46px;
+    border-radius: 24px;
+    background-color: #f1ddcc;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222c4c;
+    border: none;
+    box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  &__sam {
+    font-size: 16px;
+    line-height: 21.15px;
+    font-weight: 400;
+    letter-spacing: 1%;
+    background-color: #f1ddcc;
+    border-radius: 24px;
+    box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, 0.05);
+    padding: 12px 24px;
+    color: #222c4c;
+  }
+  &__protip {
+    font-size: 16px;
+    line-height: 21.15px;
+    font-weight: 400;
+    letter-spacing: 1%;
+    color: #222c4c;
+  }
+}
