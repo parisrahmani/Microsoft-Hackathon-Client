@@ -1,0 +1,19 @@
+@use "./variables" as *;
+
+// Outfit font family
+
+// Medium font
+@font-face {
+  font-family: "Outfit";
+  src: url("src/assets/Font/Outfit-Medium.woff2 ") format("woff2"),
+    url("src/assets/Font/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+// Light font
+@font-face {
+  font-family: "Outfit";
+  src: url("src/assets/Font/Outfit-Light.woff2") format("woff2"),
+    url("src/assets/Font/Outfit-Light.woff") format("woff");
+  font-weight: 300;
+}

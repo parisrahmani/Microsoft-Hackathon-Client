@@ -1,0 +1,68 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+// Mixin for text styling
+
+@mixin header-icon {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: $white;
+  color: $dark-blue;
+  border-radius: 13px;
+  &:hover {
+    color: $orange;
+  }
+}
+
+@mixin section-btn {
+  background-color: $orange;
+  color: $black;
+  border-radius: 36px;
+  &:hover {
+    background-color: darken($orange, 80%);
+    color: $white;
+  }
+}
+
+@mixin question {
+  background-color: $dark-blue;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+}
+
+@mixin answer {
+  background-color: $cream;
+  color: $black;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 24px;
+  &:hover {
+    background-color: $pink;
+    color: $white;
+  }
+}
+
+@mixin form-field {
+  overflow: auto;
+  resize: none;
+  padding: 0.5 1rem;
+  border-radius: 24px;
+  height: 2.375rem;
+  border: 1px solid $silver;
+  color: $gray;
+  transition: border-color 0.3s ease;
+  &:focus {
+    border-color: $dark-blue;
+  }
+}
+
+@mixin form-focus {
+  border: 1.5px solid $dark-blue;
+  outline: none;
+}
+
+@mixin select-error-border {
+  border: 1.5px solid $red;
+  border-radius: 24px;
+}
