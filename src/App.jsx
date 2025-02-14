@@ -3,6 +3,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import MainPage from "./pages/MainPage/MainPage";
 import QuizPage from "./pages/QuizPage/QuizPage";
+import AIEthics from "./components/AIEthics/AIEthics";
 import "./App.scss";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/ethics" element={<AIEthics />} />
       </Routes>
       <Footer />
     </BrowserRouter>

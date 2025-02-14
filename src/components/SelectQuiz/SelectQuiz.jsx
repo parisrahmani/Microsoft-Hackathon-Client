@@ -1,11 +1,13 @@
 import "./SelectQuiz.scss";
-
+import { Link } from "react-router-dom";
 const SelectQuiz = () => {
   return (
     <>
       <div className="quiz">
         <p className="quix__text">Elevate your AI skills!</p>
-        <button className="quiz__type">Practice 1: AI ethics</button>
+        <Link to="/ethics">
+          <button className="quiz__type">Practice 1: AI ethics</button>
+        </Link>
         <button className="quiz__type">
           Practice 2: Prompt Engineering 101{" "}
         </button>
