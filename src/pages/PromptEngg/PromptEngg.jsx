@@ -8,7 +8,7 @@ const PromptEngg = () => {
   useEffect(() => {
     const getQuiz = async () => {
       try {
-        const { data } = await axios.get(`${API_URL}/mqa/propmt-engg`);
+        const { data } = await axios.get(`${API_URL}/mqa/prompt-engg`);
         console.log(data);
         setQuiz(data);
       } catch (err) {

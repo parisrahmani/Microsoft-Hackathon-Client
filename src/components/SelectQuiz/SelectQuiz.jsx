@@ -8,9 +8,11 @@ const SelectQuiz = () => {
         <Link to="/ethics">
           <button className="quiz__type">Practice 1: AI ethics</button>
         </Link>
-        <button className="quiz__type">
-          Practice 2: Prompt Engineering 101{" "}
-        </button>
+        <Link to="/prompt-engg">
+          <button className="quiz__type">
+            Practice 2: Prompt Engineering 101{" "}
+          </button>
+        </Link>
         <div className="quiz__info-text-container">
           <p className="quiz__info-text">
             Learn about AI ethics and prompt engineering to use AI to your
