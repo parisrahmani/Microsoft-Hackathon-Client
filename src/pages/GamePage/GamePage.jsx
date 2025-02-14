@@ -69,16 +69,20 @@ function GamePage() {
         <h2> Great job! Look - Pilot loves you more! </h2>
 
         <div className="game-end__options">
-          <button onClick={() => navigate("/quiz/1")} className="quiz__type">
-            Practice 1: AI Ethics
-          </button>
-          <button
-            onClick={() => navigate("/quiz/2")}
-            className="
+          <Link to="/quiz/1">
+            <button onClick={() => navigate("/quiz/1")} className="quiz__type">
+              Practice 1: AI Ethics
+            </button>
+          </Link>
+          <Link to="/quiz/2">
+            <button
+              onClick={() => navigate("/quiz/2")}
+              className="
             quiz__type"
-          >
-            Practice 2: Prompt Engineering 101
-          </button>
+            >
+              Practice 2: Prompt Engineering 101
+            </button>
+          </Link>
           <div class="game-end__text">
             <p>
               Learn about AI ethics and prompt engineering to use AI to your
