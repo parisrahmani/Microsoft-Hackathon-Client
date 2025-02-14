@@ -14,8 +14,68 @@
     }
 }
 
-.game-page {
-    .game__choices {
+.game {
+    padding-top: 73px;
+    padding-left: 79px;
+    min-width: 608px;
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31.72px;
+        letter-spacing: 0%;
+    }
+    &__question-number {
+        margin-top: 23px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21.15px;
+        letter-spacing: 1%;
+    }
+    &__question {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 46px;
+        margin-bottom: 35px;
+        color: $cream;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18.5px;
+        height: 46px;
+        letter-spacing: 0%;
+        background-color: $dark-blue;
+        padding: 0 1.5rem;
+        border-radius: 1.5rem;
+        width: fit-content;
+    }
+    &__choices-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    &__choices {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        color: $dark-blue;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18.5px;
+        height: 46px;
+        letter-spacing: 0%;
+        background-color: $cream;
+        padding: 0 1.5rem;
+        border-radius: 1.5rem;
+        width: fit-content;
+    }
+    &__lower-container {
+        margin-top: 35px;
+        border-top: solid 1.2px gray;
+        padding-top: 53px;
+    }
+
+    &__choices {
       cursor: pointer;
       transition: background-color 0.3s ease;
       
@@ -40,7 +100,7 @@
     //   }
     // }
   
-    .game__next-button {
+    &__next-button {
       cursor: pointer;
     }
   }

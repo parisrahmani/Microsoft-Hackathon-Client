@@ -2,6 +2,7 @@ import './GamePage.scss';
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Robot from '../../components/Robot/Robot';
 
 function GamePage() {
   const [questions, setQuestions] = useState([]);
@@ -9,6 +10,7 @@ function GamePage() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [hideIncorrectOptions, setHideIncorrectOptions] = useState(false);
+  const [robotEmote, setRobotEmote] = useState("basic");
   const params = useParams();
   const navigate = useNavigate();
   const baseUrl = import.meta.env.VITE_API_URL;
@@ -37,12 +39,14 @@ function GamePage() {
     const currentQuestion = questions[currentQuestionIndex];
     if (option === currentQuestion.correct_answer) {
       setSelectedOption(option);
+      setRobotEmote("correct"); 
       setTimeout(() => {
         setShowExplanation(true);
         setHideIncorrectOptions(true);
-      }, 1500); // Short delay for visual effect
+      }, 1200); // Short delay for visual effect
     } else {
       setSelectedOption(option); // Mark the incorrect option
+      setRobotEmote("wrong");
     }
   };
 
@@ -52,6 +56,7 @@ function GamePage() {
       setSelectedOption(null);
       setShowExplanation(false);
       setHideIncorrectOptions(false);
+      setRobotEmote("basic");
     } else {
       setCurrentQuestionIndex(null); // Indicate the end of the quiz
     }
@@ -78,7 +83,7 @@ function GamePage() {
       <main className='game'>
         <h1 className='game__title'>{params.quizid === '1' ? 'Practice 1: AI Ethics' : 'Practice 2: Prompt Engineering 101'}</h1>
         <div className='game__question-container'>
-          <h5 className='game__question-number'>Question {currentQuestionIndex + 1}</h5>
+          <h5 className='game__question-number'>Question {currentQuestionIndex + 1}/{questions.length}</h5>
           <p className='game__question'>{currentQuestion.question}</p>
           <div className='game__choices-container'>
             {currentQuestion.options.map((option, index) => (
@@ -99,6 +104,7 @@ function GamePage() {
           </div>
         )}
       </main>
+      <Robot emote={robotEmote} />
     </section>
   );
 }
