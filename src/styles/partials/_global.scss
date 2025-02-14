@@ -1,0 +1,17 @@
+@use "../../styles/partials/variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Nutino Sans", Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
