@@ -3,7 +3,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import MainPage from "./pages/MainPage/MainPage";
 import QuizPage from "./pages/QuizPage/QuizPage";
-import AIEthics from "./components/AIEthics/AIEthics";
+import AIEthics from "./pages/AIEthics/AIEthics";
 import "./App.scss";
 
 function App() {
