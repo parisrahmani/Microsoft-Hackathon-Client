@@ -3,9 +3,9 @@ import "./QuizPage.scss";
 
 const QuizPage = () => {
   return (
-    <>
+    <div className="quiz-page">
       <SelectQuiz />
-    </>
+    </div>
   );
 };
 

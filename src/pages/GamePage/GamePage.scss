@@ -1,0 +1,107 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.game-page {
+    background-color: $white;
+    width: 100%;
+    min-height: calc(100vh - 197px);
+    display: flex;
+    justify-content: space-between;
+
+    &__robot {
+        padding-top: 73px;
+        padding-right: 133px;
+    }
+}
+
+.game {
+    padding-top: 73px;
+    padding-left: 79px;
+    min-width: 608px;
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31.72px;
+        letter-spacing: 0%;
+    }
+    &__question-number {
+        margin-top: 23px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21.15px;
+        letter-spacing: 1%;
+    }
+    &__question {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 46px;
+        margin-bottom: 35px;
+        color: $cream;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18.5px;
+        height: 46px;
+        letter-spacing: 0%;
+        background-color: $dark-blue;
+        padding: 0 1.5rem;
+        border-radius: 1.5rem;
+        width: fit-content;
+    }
+    &__choices-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    &__choices {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        color: $dark-blue;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18.5px;
+        height: 46px;
+        letter-spacing: 0%;
+        background-color: $cream;
+        padding: 0 1.5rem;
+        border-radius: 1.5rem;
+        width: fit-content;
+    }
+    &__lower-container {
+        margin-top: 35px;
+        border-top: solid 1.2px gray;
+        padding-top: 53px;
+    }
+
+    &__choices {
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      
+      &.correct {
+        background-color: #a6e3a1; // Light green for correct answer
+      }
+  
+      &.incorrect {
+        background-color: #f28b82; // Light red/pink for incorrect answer
+      }
+  
+      &.hidden {
+        display: none; // Hide incorrect options after correct answer
+      }
+    }
+  
+    // .game__lower-container {
+    //   display: none; // Hidden by default
+      
+    //   &.visible {
+    //     display: block;
+    //   }
+    // }
+  
+    &__next-button {
+      cursor: pointer;
+    }
+  }
+  
