@@ -1,3 +1,4 @@
+
 @use "./variables" as *;
 @use "./mixins" as *;
 @use "./typography" as *;
@@ -8,15 +9,13 @@ html {
 
 * {
   box-sizing: inherit;
+
   margin: 0;
 }
 
 body {
   min-height: 100vh;
-  font-family: $body-font-stack;
   font-weight: 400;
-  color: $instock-black;
-  background-color: $bg-light;
   background: linear-gradient(
     rgba(35, 41, 64) 207px,
     rgba(247, 248, 249, 1) 207px
@@ -55,4 +54,5 @@ h4 {
 p {
   font-size: 0.875rem;
   line-height: 1.375rem;
+
 }
