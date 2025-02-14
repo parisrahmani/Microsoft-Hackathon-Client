@@ -6,11 +6,24 @@
   flex-direction: column;
   background-color: $navy;
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    justify-content: baseline;
+    align-items: center;
+  }
+
   &__logo {
     padding: 3.5625rem 0 2.625rem 4.1875rem;
     color: $rust;
     font-weight: 700;
     line-height: 2.625rem;
     font-size: 2rem;
+  }
+
+  &__img {
+    height: 3.0625rem;
+    width: 3.0625rem;
+    margin-right: 4.1875rem;
   }
 }
