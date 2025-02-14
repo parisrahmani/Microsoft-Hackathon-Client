@@ -2,106 +2,145 @@
 @use "../../styles/partials/mixins" as *;
 
 .game-page {
-    background-color: $white;
-    width: 100%;
-    min-height: calc(100vh - 197px);
-    display: flex;
-    justify-content: space-between;
+  background-color: $white;
+  width: 100%;
+  min-height: calc(100vh - 197px);
+  display: flex;
+  justify-content: space-between;
 
-    &__robot {
-        padding-top: 73px;
-        padding-right: 120px;
-    }
+  &__robot {
+    padding-top: 73px;
+    padding-right: 120px;
+  }
 }
 
 .game {
-    margin-top: 73px;
-    margin-left: 79px;
-    width: 608px;
-    &__title {
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 31.72px;
-        letter-spacing: 0%;
-    }
-    &__question-number {
-        margin-top: 23px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 21.15px;
-        letter-spacing: 1%;
-    }
-    &__question {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 46px;
-        margin-bottom: 35px;
-        color: $cream;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 18.5px;
-        height: 46px;
-        letter-spacing: 0%;
-        background-color: $dark-blue;
-        padding: 0 1.5rem;
-        border-radius: 1.5rem;
-        width: fit-content;
-    }
-    &__choices-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-    }
-    &__choices {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-        color: $dark-blue;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 18.5px;
-        height: 46px;
-        letter-spacing: 0%;
-        background-color: $cream;
-        padding: 0 1.5rem;
-        border-radius: 1.5rem;
-        width: fit-content;
-    }
-    &__lower-container {
-        margin-top: 35px;
-        border-top: solid 1.2px gray;
-        padding-top: 53px;
+  margin-top: 73px;
+  margin-left: 79px;
+  width: 608px;
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31.72px;
+    letter-spacing: 0%;
+  }
+  &__question-number {
+    margin-top: 23px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21.15px;
+    letter-spacing: 1%;
+  }
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 46px;
+    margin-bottom: 35px;
+    color: $cream;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.5px;
+    height: 46px;
+    letter-spacing: 0%;
+    background-color: $dark-blue;
+    padding: 0 1.5rem;
+    border-radius: 1.5rem;
+    width: fit-content;
+  }
+  &__choices-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &__choices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: $dark-blue;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.5px;
+    height: 46px;
+    letter-spacing: 0%;
+    background-color: $cream;
+    padding: 0 1.5rem;
+    border-radius: 1.5rem;
+    width: fit-content;
+  }
+  &__lower-container {
+    margin-top: 35px;
+    border-top: solid 1.2px gray;
+    padding-top: 53px;
+  }
+
+  &__choices {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.correct {
+      background-color: #a6e3a1; // Light green for correct answer
     }
 
-    &__choices {
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      
-      &.correct {
-        background-color: #a6e3a1; // Light green for correct answer
-      }
-  
-      &.incorrect {
-        background-color: #f28b82; // Light red/pink for incorrect answer
-      }
-  
-      &.hidden {
-        display: none; // Hide incorrect options after correct answer
-      }
+    &.incorrect {
+      background-color: #f28b82; // Light red/pink for incorrect answer
     }
-  
-    // .game__lower-container {
-    //   display: none; // Hidden by default
-      
-    //   &.visible {
-    //     display: block;
-    //   }
-    // }
-  
-    &__next-button {
-      cursor: pointer;
+
+    &.hidden {
+      display: none; // Hide incorrect options after correct answer
     }
   }
-  
+
+  // .game__lower-container {
+  //   display: none; // Hidden by default
+
+  //   &.visible {
+  //     display: block;
+  //   }
+  // }
+
+  &__next-button {
+    cursor: pointer;
+    @include section-btn;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.quiz__type {
+  border: none;
+  font-weight: 700;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1.375rem 0;
+  margin-top: 2.1875rem;
+  color: $dark-blue;
+  background-color: $orange;
+  border-radius: 2.2188rem;
+  width: 100%;
+}
+
+.game-end {
+  margin: 8rem 5rem;
+
+  p {
+    color: $dark-blue;
+    margin-top: 2rem;
+  }
+
+  &__text {
+    margin-top: 6rem;
+    width: 600px;
+  }
+
+  &__options {
+    margin-top: 2rem;
+  }
+}
+
+h2 {
+  // color: $pin;
+}
