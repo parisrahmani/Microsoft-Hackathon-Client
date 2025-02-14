@@ -4,7 +4,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  background-color: $navy;
+  background-color: $dark-blue;
 
   &__container {
     display: flex;
@@ -15,7 +15,7 @@
 
   &__logo {
     padding: 3.5625rem 0 2.625rem 4.1875rem;
-    color: $rust;
+    color: $pink;
     font-weight: 700;
     line-height: 2.625rem;
     font-size: 2rem;

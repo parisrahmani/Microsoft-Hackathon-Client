@@ -1,0 +1,15 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.footer {
+  margin-right: 4.1875rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  &__text {
+    line-height: 1.3125rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $black;
+  }
+}
