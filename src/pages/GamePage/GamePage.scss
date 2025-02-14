@@ -108,3 +108,39 @@
     margin-top: 1rem;
   }
 }
+
+.quiz__type {
+  border: none;
+  font-weight: 700;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1.375rem 0;
+  margin-top: 2.1875rem;
+  color: $dark-blue;
+  background-color: $orange;
+  border-radius: 2.2188rem;
+  width: 100%;
+}
+
+.game-end {
+  margin: 8rem 5rem;
+
+  p {
+    color: $dark-blue;
+    margin-top: 2rem;
+  }
+
+  &__text {
+    margin-top: 6rem;
+    width: 600px;
+  }
+
+  &__options {
+    margin-top: 2rem;
+  }
+}
+
+h2 {
+  // color: $pin;
+}

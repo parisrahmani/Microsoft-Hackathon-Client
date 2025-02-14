@@ -1,8 +1,8 @@
-import './GamePage.scss';
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import Robot from '../../components/Robot/Robot';
+import "./GamePage.scss";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Robot from "../../components/Robot/Robot";
 
 function GamePage() {
   const [questions, setQuestions] = useState([]);
@@ -17,15 +17,16 @@ function GamePage() {
 
   const getQuestions = async () => {
     try {
-      const response = params.quizid === '1'
-        ? await axios.get(`${baseUrl}/mqa/ai-ethics`)
-        : await axios.get(`${baseUrl}/mqa/prompt-engg`);
+      const response =
+        params.quizid === "1"
+          ? await axios.get(`${baseUrl}/mqa/ai-ethics`)
+          : await axios.get(`${baseUrl}/mqa/prompt-engg`);
       setQuestions(response.data);
     } catch (error) {
       if (error.response && error.response.status === 404) {
-        navigate('/not-found');
+        navigate("/not-found");
       } else {
-        console.error('Error fetching questions:', error);
+        console.error("Error fetching questions:", error);
       }
     }
   };
@@ -65,14 +66,32 @@ function GamePage() {
   const renderGameEndScreen = () => (
     <section className="game-page">
       <div className="game-end">
-        <h2>Good Job! 🎉</h2>
-        <p>You’ve completed the quiz. Want to try another one?</p>
+        <h2> Great job! Look - Pilot loves you more! </h2>
+
         <div className="game-end__options">
-          <button onClick={() => navigate('/quiz/1')}>Practice 1: AI Ethics</button>
-          <button onClick={() => navigate('/quiz/2')}>Practice 2: Prompt Engineering 101</button>
+          <button onClick={() => navigate("/quiz/1")} className="quiz__type">
+            Practice 1: AI Ethics
+          </button>
+          <button
+            onClick={() => navigate("/quiz/2")}
+            className="
+            quiz__type"
+          >
+            Practice 2: Prompt Engineering 101
+          </button>
+          <div class="game-end__text">
+            <p>
+              Learn about AI ethics and prompt engineering to use AI to your
+              advantage.
+            </p>
+            <p>
+              Whenever you’re ready, join us as a CoPilot with Microsoft’s AI
+              companion!
+            </p>
+          </div>
         </div>
       </div>
-      <div className='game-page__robot'>
+      <div className="game-page__robot">
         <Robot emote="basic" />
       </div>
     </section>
@@ -84,17 +103,34 @@ function GamePage() {
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <section className='game-page'>
-      <main className='game'>
-        <h1 className='game__title'>{params.quizid === '1' ? 'Practice 1: AI Ethics' : 'Practice 2: Prompt Engineering 101'}</h1>
-        <div className='game__question-container'>
-          <h5 className='game__question-number'>Question {currentQuestionIndex + 1}/{questions.length}</h5>
-          <p className='game__question'>{currentQuestion.question}</p>
-          <div className='game__choices-container'>
+    <section className="game-page">
+      <main className="game">
+        <h1 className="game__title">
+          {params.quizid === "1"
+            ? "Practice 1: AI Ethics"
+            : "Practice 2: Prompt Engineering 101"}
+        </h1>
+        <div className="game__question-container">
+          <h5 className="game__question-number">
+            Question {currentQuestionIndex + 1}/{questions.length}
+          </h5>
+          <p className="game__question">{currentQuestion.question}</p>
+          <div className="game__choices-container">
             {currentQuestion.options.map((option, index) => (
               <p
                 key={index}
-                className={`game__choices ${selectedOption === option ? (option === currentQuestion.correct_answer ? 'correct' : 'incorrect') : ''} ${hideIncorrectOptions && option !== currentQuestion.correct_answer ? 'hidden' : ''}`}
+                className={`game__choices ${
+                  selectedOption === option
+                    ? option === currentQuestion.correct_answer
+                      ? "correct"
+                      : "incorrect"
+                    : ""
+                } ${
+                  hideIncorrectOptions &&
+                  option !== currentQuestion.correct_answer
+                    ? "hidden"
+                    : ""
+                }`}
                 onClick={() => handleOptionClick(option)}
               >
                 {option}
@@ -103,13 +139,15 @@ function GamePage() {
           </div>
         </div>
         {showExplanation && (
-          <div className='game__lower-container'>
-            <p className='game__explanation'>{currentQuestion.explanation}</p>
-            <button className='game__next-button' onClick={handleNext}>Next</button>
+          <div className="game__lower-container">
+            <p className="game__explanation">{currentQuestion.explanation}</p>
+            <button className="game__next-button" onClick={handleNext}>
+              Next
+            </button>
           </div>
         )}
       </main>
-      <div className='game-page__robot'>
+      <div className="game-page__robot">
         <Robot emote={robotEmote} />
       </div>
     </section>
