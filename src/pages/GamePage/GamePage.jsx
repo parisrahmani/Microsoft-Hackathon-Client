@@ -17,8 +17,8 @@ function GamePage() {
 
   const getQuestions = async () => {
     try {
-      const response = params.quizid === '1' 
-        ? await axios.get(`${baseUrl}/mqa/ai-ethics`) 
+      const response = params.quizid === '1'
+        ? await axios.get(`${baseUrl}/mqa/ai-ethics`)
         : await axios.get(`${baseUrl}/mqa/prompt-engg`);
       setQuestions(response.data);
     } catch (error) {
@@ -39,7 +39,7 @@ function GamePage() {
     const currentQuestion = questions[currentQuestionIndex];
     if (option === currentQuestion.correct_answer) {
       setSelectedOption(option);
-      setRobotEmote("correct"); 
+      setRobotEmote("correct");
       setTimeout(() => {
         setShowExplanation(true);
         setHideIncorrectOptions(true);
@@ -63,14 +63,19 @@ function GamePage() {
   };
 
   const renderGameEndScreen = () => (
-    <div className="game-end">
-      <h2>Good Job! 🎉</h2>
-      <p>You’ve completed the quiz. Want to try another one?</p>
-      <div className="game-end__options">
-        <button onClick={() => navigate('/quiz/1')}>Practice 1: AI Ethics</button>
-        <button onClick={() => navigate('/quiz/2')}>Practice 2: Prompt Engineering 101</button>
+    <section className="game-page">
+      <div className="game-end">
+        <h2>Good Job! 🎉</h2>
+        <p>You’ve completed the quiz. Want to try another one?</p>
+        <div className="game-end__options">
+          <button onClick={() => navigate('/quiz/1')}>Practice 1: AI Ethics</button>
+          <button onClick={() => navigate('/quiz/2')}>Practice 2: Prompt Engineering 101</button>
+        </div>
       </div>
-    </div>
+      <div className='game-page__robot'>
+        <Robot emote="basic" />
+      </div>
+    </section>
   );
 
   if (questions.length === 0) return <p>Loading...</p>;
@@ -104,7 +109,9 @@ function GamePage() {
           </div>
         )}
       </main>
-      <Robot emote={robotEmote} />
+      <div className='game-page__robot'>
+        <Robot emote={robotEmote} />
+      </div>
     </section>
   );
 }
