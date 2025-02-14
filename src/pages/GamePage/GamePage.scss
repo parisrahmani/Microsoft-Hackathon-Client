@@ -1,0 +1,47 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.game-page {
+    background-color: $white;
+    width: 100%;
+    min-height: calc(100vh - 197px);
+    display: flex;
+    justify-content: space-between;
+
+    &__robot {
+        padding-top: 73px;
+        padding-right: 133px;
+    }
+}
+
+.game-page {
+    .game__choices {
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      
+      &.correct {
+        background-color: #a6e3a1; // Light green for correct answer
+      }
+  
+      &.incorrect {
+        background-color: #f28b82; // Light red/pink for incorrect answer
+      }
+  
+      &.hidden {
+        display: none; // Hide incorrect options after correct answer
+      }
+    }
+  
+    // .game__lower-container {
+    //   display: none; // Hidden by default
+      
+    //   &.visible {
+    //     display: block;
+    //   }
+    // }
+  
+    .game__next-button {
+      cursor: pointer;
+    }
+  }
+  
