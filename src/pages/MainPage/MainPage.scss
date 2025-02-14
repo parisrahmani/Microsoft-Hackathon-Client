@@ -1,0 +1,43 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.mainpage {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: calc(100vh - 197px);
+    background-color: $white;
+
+    &__hero {
+        display: flex;
+        flex-direction: column;
+        padding-top: 115px;
+        padding-left: 102px;
+    }
+    &__title {
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 66.09px;
+        color: $pink;
+    }
+
+    &__info {
+        font-family: Nokora;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21.15px;
+        letter-spacing: 0%;
+
+        &--top {
+            padding-top: 16px;
+        }
+
+        &--bottom {
+            padding-top: 16px;
+        }
+    }
+    &__robot {
+        padding-top: 73px;
+        padding-right: 133px;
+    }
+}
