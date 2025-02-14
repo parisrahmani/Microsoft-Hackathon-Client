@@ -1,15 +1,27 @@
 .robot {
-    display: flex;
-    flex-direction: column;
-    width: 401px;
-    height: 484px;
-    background-color: #FEFEFE;
-    border: 2rem solid #F6F6F6;
-    border-radius: 2rem;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 401px;
+  height: 484px;
+  background-color: #fefefe;
+  border: 2rem solid #f6f6f6;
+  border-radius: 2rem;
+  overflow: hidden;
 
-    &__image {
-        width: 100%;
-        object-fit: contain;
-    }   
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__image-meter {
+    object-fit: contain;
+    width: 70%;
+  }
+
+  &__meter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+  }
 }
