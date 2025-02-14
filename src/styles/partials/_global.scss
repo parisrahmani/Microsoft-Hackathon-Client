@@ -1,17 +1,58 @@
-@use "../../styles/partials/variables" as *;
 
-*,
-*::before,
-*::after {
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+html {
   box-sizing: border-box;
-  padding: 0;
+}
+
+* {
+  box-sizing: inherit;
+
   margin: 0;
 }
 
 body {
-  font-family: "Nutino Sans", Arial, sans-serif;
+  min-height: 100vh;
+  font-weight: 400;
+  background: linear-gradient(
+    rgba(35, 41, 64) 207px,
+    rgba(247, 248, 249, 1) 207px
+  );
 }
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-weight: 400;
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+p {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+
 }
